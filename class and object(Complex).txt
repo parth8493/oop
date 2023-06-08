@@ -1,0 +1,64 @@
+COMPLEX NUMBER
+import java.util.*;
+class Complex
+{
+int real,imag;
+Complex()
+{
+this.real=0;
+this.imag=0;
+}
+Complex(int real,int imag)
+{
+this.real=real;
+this.imag=imag;
+}
+static void addition(Complex com1,Complex com2)
+{
+Complex res=new Complex();
+res.real=com1.real+com2.real;
+res.imag=com1.imag+com2.imag;
+System.out.println(res.real+"+"+res.imag+"i");
+}
+static void substraction(Complex com1,Complex com2)
+{
+Complex res=new Complex();
+res.real=com1.real-com2.real;
+res.imag=com1.imag-com2.imag;
+System.out.println(res.real+"+"+res.imag+"i");
+}
+static void multiplication(Complex com1,Complex com2)
+{
+Complex res=new Complex();
+res.real=com1.real*com2.real;
+res.imag=com1.imag*com2.imag;
+System.out.println(res.real+"+"+res.imag+"i");
+}
+static void division(Complex com1,Complex com2)
+{
+Complex res=new Complex();
+res.real=com1.real/com2.real;
+res.imag=com1.imag/com2.imag;
+System.out.println(res.real+"+"+res.imag+"i");
+}
+public static void main(String[]args)
+{
+Complex complex1=new Complex(10,20);
+Complex complex2=new Complex(5,10);
+System.out.println("Enter your choice");
+System.out.println("1.addition 2.substraction 3.multiplication 4.division");
+Scanner sc=new Scanner(System.in);
+int choice=sc.nextInt();
+switch(choice)
+{
+case 1: addition(complex1,complex2);
+break;
+case 2: substraction(complex1,complex2);
+break;
+case 3: multiplication(complex1,complex2);
+break;
+case 4: division(complex1,complex2);
+break;
+}
+}
+}

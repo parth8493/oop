@@ -1,0 +1,74 @@
+PUBLICATION
+class Publication
+{
+private String title;
+private double price;
+private int copies;
+public int getcopies()
+{
+return this.copies;
+}
+public void setcopies(int copies)
+{
+this.copies=copies;
+}
+public double getprice()
+{
+return this.price;
+}
+public void setprice(double price)
+{
+this.price=price;
+}
+public void sellcopy(int qty)
+{
+System.out.println("Total Publication sell:$"+(qty*price));
+}
+}
+class Book extends Publication
+{
+private String author;
+public void ordercopies(int pcopies)
+{
+setcopies(getcopies()+pcopies);
+System.out.println("Total Order Copies:- "+(getcopies()+pcopies));
+}
+public void sellcopy(int qty)
+{
+System.out.println("Total Book sell:$"+(qty*getprice()));
+}
+}
+class Magazine extends Publication
+{
+private int orderQty;
+private String currIssue;
+public void RecvNewIssue(String pNewIssue)
+{
+setcopies(orderQty);
+currIssue=pNewIssue;
+}
+public void sellcopy(int qty)
+{
+System.out.println("Total Magzine sell : $"+(qty*getprice()));
+}
+}
+class Test
+{
+public static void main(String[]args)
+{
+Book obj1=new Book();
+obj1.ordercopies(3);
+Publication obj2=new Book();
+obj2.setprice(10);
+obj2.sellcopy(3);
+Publication obj3=new Publication();
+obj3.setcopies(3);
+obj3.getcopies();
+obj3.setprice(20.3);
+obj3.getprice();
+obj3.sellcopy(2);
+Publication obj4=new Magazine();
+obj4.setprice(20.3);
+obj4.sellcopy(6);
+}
+}
